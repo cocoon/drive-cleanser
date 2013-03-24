@@ -19,4 +19,4 @@ This page contains performance information for wiping various drive devices. The
 || *Device* || *Interface* || *Size* || *Total Time (minutes)* ||
 || PNY USB|| USB || 2GB || 5.9895 ||
 || Sandisk Cruzer USB|| USB || 8GB || 19.6705 ||
-|| Hitachi HTS541680J9SA00 SATA|| eSATA || 80GB || ??.???? ||
+|| Hitachi HTS541680J9SA00 SATA|| eSATA || 80GB || 36.6832 ||
