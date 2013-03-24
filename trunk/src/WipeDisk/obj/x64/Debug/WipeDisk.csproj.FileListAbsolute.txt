@@ -1,4 +1,0 @@
-c:\Source\WipeDisk\WipeDisk\bin\x64\Debug\WipeDisk.exe
-c:\Source\WipeDisk\WipeDisk\bin\x64\Debug\WipeDisk.pdb
-c:\Source\WipeDisk\WipeDisk\obj\x64\Debug\WipeDisk.exe
-c:\Source\WipeDisk\WipeDisk\obj\x64\Debug\WipeDisk.pdb

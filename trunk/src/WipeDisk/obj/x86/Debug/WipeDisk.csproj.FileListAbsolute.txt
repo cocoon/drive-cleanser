@@ -1,8 +1,0 @@
-c:\Source\WipeDisk\WipeDisk\bin\Debug\WipeDisk.exe
-c:\Source\WipeDisk\WipeDisk\bin\Debug\WipeDisk.pdb
-c:\Source\WipeDisk\WipeDisk\obj\x86\Debug\WipeDisk.exe
-c:\Source\WipeDisk\WipeDisk\obj\x86\Debug\WipeDisk.pdb
-C:\Source\WipeDisk\trunk\src\WipeDisk\bin\Debug\WipeDisk.exe
-C:\Source\WipeDisk\trunk\src\WipeDisk\bin\Debug\WipeDisk.pdb
-C:\Source\WipeDisk\trunk\src\WipeDisk\obj\x86\Debug\WipeDisk.exe
-C:\Source\WipeDisk\trunk\src\WipeDisk\obj\x86\Debug\WipeDisk.pdb
