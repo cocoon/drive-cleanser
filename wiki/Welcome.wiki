@@ -16,9 +16,9 @@ I downloaded the first free application I found, fired it up and began the wipe 
 
 == C# To The Rescue ==
 I fired up Visual Studio and quickly hammered out an application that would:
-# Determine the total drive space (formatted usable drive space)
-# Loop and create 1GB files until the drive was filled
-# When done, format the drive.
+  # Determine the total drive space (formatted usable drive space)
+  # Loop and create 1GB files until the drive was filled
+  # When done, format the drive.
 
 This worked OK since it made sure that the drive had been completely filled with garbage and then formatted. I was fairly certain nothing could be retrieved from the drive when I finished.  If anything *maybe* someone could retrieve a list of files that the drive once contained.  I then began to wonder if accessing the disk directly and filling each and every sector would be any faster.
 
