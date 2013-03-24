@@ -1,0 +1,39 @@
+#summary Welcome to Drive Cleanser
+#labels Featured
+
+= Introduction =
+
+Welcome to the Drive Cleanser Wiki. Here I will discuss just what Drive Cleanser is and what it is not.  How it came about and the future of the application.
+
+
+= Details =
+
+Drive Cleanser started out as one of those projects I wanted to build just to see if I could.  One day I sold an old hard drive and wanted to securely wipe the contents to ensure nothing I had on the drive could be retrieved once I gave it to the new owner.  Typically when I want to wipe a drive I will use a boot CD that contains DBAN.  DBAN has always worked great in the past and has been my default "go-to" program for all my drive wiping needs. 
+
+In this particular case though - I was working on a few things within windows and didn't want to reboot or spend too much time rebooting and waiting for the wipe process to complete. I decided to search the web and find some Windows applications that could do the job for me. This way I could wipe the drive and still work on whatever it was that had my attention at the time.
+
+I downloaded the first free application I found, fired it up and began the wipe process.  After about 30 minutes the application was only 2% in to the wipe process. This was unacceptable since the drive was only a 60GB SATA drive.  
+
+== C# To The Rescue ==
+I fired up Visual Studio and quickly hammered out an application that would:
+# Determine the total drive space (formatted usable drive space)
+# Loop and create 1GB files until the drive was filled
+# When done, format the drive.
+
+This worked OK since it made sure that the drive had been completely filled with garbage and then formatted. I was fairly certain nothing could be retrieved from the drive when I finished.  If anything *maybe* someone could retrieve a list of files that the drive once contained.  I then began to wonder if accessing the disk directly and filling each and every sector would be any faster.
+
+I fired up google to research how I could accomplish this with C#.  I had a _general idea_ how to go about it but needed some good material to fill in the gaps I had.
+
+== PInvoke It ==
+I came across lots of articles about accessing a disk directly but almost everyone I came across was snippets here and there. Nothing actually was a complete solution - only bits and pieces.
+
+After about 12 hours of playing with my code I had a solution I was sure would work.  I ran my code against a small drive, then downloaded a Drive Hex Editor to examine the disk and ensure it worked correctly.  The hex editor showed the entire drive - with the exception of the last 3KB - had been filled.  I knew what the problem was and quickly changed my code to fill the entire drive. I examined the drive again and oddly enough, only the first 2GB of drive was filled with my 0xFF bytes. 
+
+I spent several hours trying to figure out what I had broke in my code to cause this.  As it turns out, I didn't break anything. The original hex editor I downloaded was showing me incorrect information about the drive. I then downloaded Active Disk Editor. This application worked a lot better and didn't lead me in the wrong direction when attempting to test my program.
+
+= What Now =
+After a lot of time looking up Win32 API calls, I got the program to work correctly. It still needs work as far as allowing command line parameters to be passed in, exception handling and so on but it's still very much a work in progress.
+
+Drive Cleanser isn't meant to be better than everything else - by no means to I think it will out perform DBAN or many of the other applications out there. The reason I made it and released in to the open source world is so others can use it, improve upon it and maybe even integrate it in to their own applications.  
+
+I am hoping that by providing this code to the C# community, it will help others realize just how easy it is to directly access drive contents and help them with other projects. 
