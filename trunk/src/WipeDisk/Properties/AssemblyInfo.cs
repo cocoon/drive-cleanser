@@ -20,11 +20,11 @@ using System.Runtime.InteropServices;
 
 #endregion
 
-[assembly: AssemblyTitle("WipeDisk")]
+[assembly: AssemblyTitle("DriveCleanser")]
 [assembly: AssemblyDescription("Security wipe drives.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Brian David Patterson")]
-[assembly: AssemblyProduct("WipeDisk")]
+[assembly: AssemblyProduct("DriveCleanser")]
 [assembly: AssemblyCopyright("Copyright © 2013 Brian David Patterson")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
