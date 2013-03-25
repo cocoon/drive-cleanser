@@ -36,6 +36,7 @@ namespace WipeDisk
         private static void Main(string[] args)
         {
             int driveCount = 0;
+            ShowBanner();
             var pds = new PhysicalDrives();
             foreach (PhysicalDrive pd in pds)
             {
@@ -75,6 +76,11 @@ namespace WipeDisk
             }
         }
 
+        private static void ShowBanner()
+        {
+            Console.WriteLine("DriveCleanser Copyright 2013 Brian David Patterson");
+            Console.WriteLine("<pattersonbriandavid@gmail.com>\n");
+        }
 
         /// <summary>
         /// 	Validates the key info.
