@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CmdLine\Options.cs" />
+    <Compile Include="Cryptography\RNG.cs" />
     <Compile Include="Hardware\CubicAddress.cs" />
     <Compile Include="Hardware\DiskGeometry.cs" />
     <Compile Include="DiskWiper.cs" />
@@ -56,6 +58,10 @@
     <Compile Include="StringHelper.cs" />
     <Compile Include="Win32.cs" />
     <Compile Include="WMIWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -16,6 +16,9 @@
 #region
 
 using System;
+using System.Security.Cryptography;
+using DriveCleanser.CmdLine;
+
 
 #endregion
 
@@ -35,6 +38,7 @@ namespace WipeDisk
         /// </remarks>
         private static void Main(string[] args)
         {
+           // byte[] returned = DriveCleanser.Cryptography.RNG.FillDoD5200ByteArray(1024);
             int driveCount = 0;
             ShowBanner();
             var pds = new PhysicalDrives();
