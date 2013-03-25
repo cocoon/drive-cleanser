@@ -22,18 +22,17 @@ using System;
 namespace WipeDisk
 {
     /// <summary>
+    /// 
     /// </summary>
-    /// <remarks>
-    /// </remarks>
+    /// <remarks></remarks>
     internal static class StringHelper
     {
         /// <summary>
-        /// 	Byteses to string.
+        /// Byteses to string.
         /// </summary>
-        /// <param name = "byteCount">The byte count.</param>
+        /// <param name="byteCount">The byte count.</param>
         /// <returns></returns>
-        /// <remarks>
-        /// </remarks>
+        /// <remarks></remarks>
         internal static String BytesToString(ulong byteCount)
         {
             string[] suf = {"B", "KB", "MB", "GB", "TB", "PB", "EB"}; //Longs run out around EB
@@ -46,12 +45,11 @@ namespace WipeDisk
         }
 
         /// <summary>
-        /// 	Determines whether the specified value is numeric.
+        /// Determines whether the specified value is numeric.
         /// </summary>
-        /// <param name = "value">The value.</param>
+        /// <param name="value">The value.</param>
         /// <returns><c>true</c> if the specified value is numeric; otherwise, <c>false</c>.</returns>
-        /// <remarks>
-        /// </remarks>
+        /// <remarks></remarks>
         public static bool IsNumeric(string value)
         {
             try

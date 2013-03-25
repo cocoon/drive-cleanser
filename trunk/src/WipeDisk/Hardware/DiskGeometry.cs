@@ -21,14 +21,38 @@ using System;
 
 namespace WipeDisk.Hardware
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <remarks></remarks>
     public class DiskGeometry : CubicAddress
     {
+        /// <summary>
+        /// 
+        /// </summary>
         private readonly UInt32 m_BytesPerCylinder;
+        /// <summary>
+        /// 
+        /// </summary>
         private readonly Int64 m_DiskSize;
+        /// <summary>
+        /// 
+        /// </summary>
         private readonly CubicAddress m_MaximumCubicAddress;
+        /// <summary>
+        /// 
+        /// </summary>
         private readonly long m_MaximumLinearAddress;
+        /// <summary>
+        /// 
+        /// </summary>
         private Win32.DISK_GEOMETRY m_Geometry;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DiskGeometry"/> class.
+        /// </summary>
+        /// <param name="deviceName">Name of the device.</param>
+        /// <remarks></remarks>
         private DiskGeometry(String deviceName)
         {
             var x = new Win32.DISK_GEOMETRY_EX();
@@ -45,56 +69,104 @@ namespace WipeDisk.Hardware
             m_MaximumCubicAddress = Transform(m_MaximumLinearAddress, this);
         }
 
+        /// <summary>
+        /// Gets the type of the media.
+        /// </summary>
+        /// <remarks></remarks>
         public MEDIA_TYPE MediaType
         {
             get { return m_Geometry.MediaType; }
         }
 
+        /// <summary>
+        /// Gets the name of the media type.
+        /// </summary>
+        /// <remarks></remarks>
         public String MediaTypeName
         {
             get { return Enum.GetName(typeof (MEDIA_TYPE), MediaType); }
         }
 
+        /// <summary>
+        /// Gets or sets the cylinder.
+        /// </summary>
+        /// <value>The cylinder.</value>
+        /// <remarks></remarks>
         public override long Cylinder
         {
             get { return m_Geometry.Cylinders; }
         }
 
+        /// <summary>
+        /// Gets or sets the head.
+        /// </summary>
+        /// <value>The head.</value>
+        /// <remarks></remarks>
         public override uint Head
         {
             get { return m_Geometry.TracksPerCylinder; }
         }
 
+        /// <summary>
+        /// Gets or sets the sector.
+        /// </summary>
+        /// <value>The sector.</value>
+        /// <remarks></remarks>
         public override uint Sector
         {
             get { return m_Geometry.SectorsPerTrack; }
         }
 
+        /// <summary>
+        /// Gets the bytes per sector.
+        /// </summary>
+        /// <remarks></remarks>
         public UInt32 BytesPerSector
         {
             get { return m_Geometry.BytesPerSector; }
         }
 
+        /// <summary>
+        /// Gets the size of the disk.
+        /// </summary>
+        /// <remarks></remarks>
         public long DiskSize
         {
             get { return m_DiskSize; }
         }
 
+        /// <summary>
+        /// Gets the maximum linear address.
+        /// </summary>
+        /// <remarks></remarks>
         public long MaximumLinearAddress
         {
             get { return m_MaximumLinearAddress; }
         }
 
+        /// <summary>
+        /// Gets the maximum cubic address.
+        /// </summary>
+        /// <remarks></remarks>
         public CubicAddress MaximumCubicAddress
         {
             get { return m_MaximumCubicAddress; }
         }
 
+        /// <summary>
+        /// Gets the bytes per cylinder.
+        /// </summary>
+        /// <remarks></remarks>
         public UInt32 BytesPerCylinder
         {
             get { return m_BytesPerCylinder; }
         }
 
+        /// <summary>
+        /// Throws if disk size out of integrity.
+        /// </summary>
+        /// <param name="remainder">The remainder.</param>
+        /// <remarks></remarks>
         internal static void ThrowIfDiskSizeOutOfIntegrity(long remainder)
         {
             if (0 != remainder)
@@ -104,6 +176,12 @@ namespace WipeDisk.Hardware
             }
         }
 
+        /// <summary>
+        /// Froms the device.
+        /// </summary>
+        /// <param name="deviceName">Name of the device.</param>
+        /// <returns></returns>
+        /// <remarks></remarks>
         public static DiskGeometry FromDevice(String deviceName)
         {
             return new DiskGeometry(deviceName);

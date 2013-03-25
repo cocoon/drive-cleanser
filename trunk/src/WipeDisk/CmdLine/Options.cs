@@ -15,11 +15,25 @@
 
 namespace DriveCleanser.CmdLine
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <remarks></remarks>
     internal class Options
     {
+        /// <summary>
+        /// Gets or sets a value indicating whether [wipe drive].
+        /// </summary>
+        /// <value><c>true</c> if [wipe drive]; otherwise, <c>false</c>.</value>
+        /// <remarks></remarks>
         public bool WipeDrive { get; set; }
 
 
+        /// <summary>
+        /// Gets or sets a value indicating whether [wipe free].
+        /// </summary>
+        /// <value><c>true</c> if [wipe free]; otherwise, <c>false</c>.</value>
+        /// <remarks></remarks>
         public bool WipeFree { get; set; }
     }
 }

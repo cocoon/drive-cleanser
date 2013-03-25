@@ -6,13 +6,18 @@ using System.Text;
 
 namespace DriveCleanser.Cryptography
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <remarks></remarks>
     internal static class RNG
     {
         /// <summary>
         /// Fills a byte array with Cryptographically secure random data
         /// </summary>
-        /// <param name="arrayLength"></param>
+        /// <param name="arrayLength">Length of the array.</param>
         /// <returns></returns>
+        /// <remarks></remarks>
         internal static byte[] FillByteArray(int arrayLength)
         {
             RandomNumberGenerator rng = new RNGCryptoServiceProvider();

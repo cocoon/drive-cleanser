@@ -25,9 +25,9 @@ using Microsoft.Win32.SafeHandles;
 namespace WipeDisk
 {
     /// <summary>
+    /// 
     /// </summary>
-    /// <remarks>
-    /// </remarks>
+    /// <remarks></remarks>
     internal class DiskWiper
     {
         //*******************************************************************
@@ -35,6 +35,7 @@ namespace WipeDisk
         // The following number of the number of 512 byte blocks that is 
         // written to the disk.
         /// <summary>
+        /// 
         /// </summary>
         private const int MULTIPLIER = 512;
 
@@ -42,11 +43,10 @@ namespace WipeDisk
 
 
         /// <summary>
-        /// 	Wipes the disk.
+        /// Wipes the disk.
         /// </summary>
-        /// <param name = "pd">The pd.</param>
-        /// <remarks>
-        /// </remarks>
+        /// <param name="pd">The pd.</param>
+        /// <remarks></remarks>
         public void wipeDisk(PhysicalDrive pd)
         {
             DateTime dtStart = DateTime.Now;
@@ -210,14 +210,13 @@ namespace WipeDisk
         }
 
         /// <summary>
-        /// 	Wipes all remaining bytes on the drive that didn't get wiped during our "Block Wipe" process.
+        /// Wipes all remaining bytes on the drive that didn't get wiped during our "Block Wipe" process.
         /// </summary>
-        /// <param name = "startOffset">The start offset.</param>
-        /// <param name = "excessData">The excess data.</param>
-        /// <param name = "bytesPerSector">The bytes per sector.</param>
-        /// <param name = "diskHandle">The disk handle.</param>
-        /// <remarks>
-        /// </remarks>
+        /// <param name="startOffset">The start offset.</param>
+        /// <param name="excessData">The excess data.</param>
+        /// <param name="bytesPerSector">The bytes per sector.</param>
+        /// <param name="diskHandle">The disk handle.</param>
+        /// <remarks></remarks>
         private void StartCleanup(long startOffset, long excessData, uint bytesPerSector, SafeFileHandle diskHandle)
         {
             var junkBytes = new byte[bytesPerSector];
@@ -265,12 +264,11 @@ namespace WipeDisk
         }
 
         /// <summary>
-        /// 	Locks the drives.
+        /// Locks the drives.
         /// </summary>
-        /// <param name = "deviceId">The device id.</param>
+        /// <param name="deviceId">The device id.</param>
         /// <returns></returns>
-        /// <remarks>
-        /// </remarks>
+        /// <remarks></remarks>
         private int LockDrives(string deviceId)
         {
             bool success = false;

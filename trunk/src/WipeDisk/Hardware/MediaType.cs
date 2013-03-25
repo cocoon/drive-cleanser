@@ -16,11 +16,9 @@
 namespace WipeDisk.Hardware
 {
     /// <summary>
-    /// 	An enumeration representing the various types of media
+    /// An enumeration representing the various types of media
     /// </summary>
-    /// <remarks>
-    /// 	See http://msdn.microsoft.com/en-us/library/windows/desktop/aa365231%28v=vs.85%29.aspx for more information.
-    /// </remarks>
+    /// <remarks>See http://msdn.microsoft.com/en-us/library/windows/desktop/aa365231%28v=vs.85%29.aspx for more information.</remarks>
     public enum MEDIA_TYPE
     {
         /// <summary>
