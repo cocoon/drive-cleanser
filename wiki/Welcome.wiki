@@ -38,6 +38,6 @@ I spent several hours trying to figure out what I had broke in my code to cause 
 = What Now =
 After a lot of time looking up Win32 API calls, I got the program to work correctly. It still needs work as far as allowing command line parameters to be passed in, exception handling and so on but it's still very much a work in progress.
 
-Drive Cleanser isn't meant to be better than everything else - by no means to I think it will out perform DBAN or many of the other applications out there. The reason I made it and released in to the open source world is so others can use it, improve upon it and maybe even integrate it in to their own applications.  
+Drive Cleanser isn't meant to be better than everything else - by no means do I think it will out perform DBAN or many of the other applications out there. The reason I made it and released in to the open source world is so others can use it, improve upon it and maybe even integrate it in to their own applications.  
 
 I am hoping that by providing this code to the C# community, it will help others realize just how easy it is to directly access drive contents and help them with other projects. 
