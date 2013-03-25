@@ -51,16 +51,11 @@ namespace WipeDisk
         {
             DateTime dtStart = DateTime.Now;
 
-            //const uint OPEN_EXISTING = 3;
-
-
             bool success = false;
             int intOut;
             List<string> drives = WMIWrapper.GetDevices(pd.DeviceID);
 
-
-            //string deviceId = @"\\.\PHYSICALDRIVE2";
-            long DiskSize = pd.Geometry.DiskSize; //TODO Get the size of the drive (bytes)
+            long DiskSize = pd.Geometry.DiskSize; 
 
             SafeFileHandle diskHandle = Win32.CreateFile(pd.DeviceID, Win32.GENERIC_WRITE, 0, IntPtr.Zero,
                                                          Win32.OPEN_EXISTING, 0,
@@ -136,7 +131,6 @@ namespace WipeDisk
                 for (long sectorNum = 0; sectorNum < numTotalSectors; sectorNum++)
                 {
                     int numBytesWritten = 0;
-                    int moveToHigh;
 
                     try
                     {
@@ -171,9 +165,8 @@ namespace WipeDisk
                     catch (Exception exc)
                     {
                         Console.WriteLine("******************  CAUGHT EXCEPTION!! " + exc.Message);
-                        int dummy = 1;
                     }
-                    //sectorNum = sectorNum + 199;
+                    
                 }
                 StartCleanup(cleanupStart, missingData, pd.Geometry.BytesPerSector, diskHandle);
                 Console.WriteLine("\r                                                ");
@@ -217,7 +210,7 @@ namespace WipeDisk
         }
 
         /// <summary>
-        /// 	Starts the cleanup.
+        /// 	Wipes all remaining bytes on the drive that didn't get wiped during our "Block Wipe" process.
         /// </summary>
         /// <param name = "startOffset">The start offset.</param>
         /// <param name = "excessData">The excess data.</param>
@@ -238,7 +231,7 @@ namespace WipeDisk
             for (long sectorNum = 0; sectorNum < numTotalSectors; sectorNum++)
             {
                 int numBytesWritten = 0;
-                int moveToHigh;
+               
 
                 try
                 {
@@ -266,7 +259,7 @@ namespace WipeDisk
                 catch (Exception exc)
                 {
                     Console.WriteLine("******************  CAUGHT EXCEPTION!! " + exc.Message);
-                    int dummy = 1;
+                  
                 }
             }
         }
