@@ -1,6 +1,10 @@
 #summary Welcome to Drive Cleanser
 #labels Featured
 
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3BUM7DDBVPCU6"><img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" >
+
+
+
 = Introduction =
 
 Welcome to the Drive Cleanser Wiki. Here I will discuss just what Drive Cleanser is and what it is not.  How it came about and the future of the application.
