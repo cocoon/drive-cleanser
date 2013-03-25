@@ -24,17 +24,15 @@ using WipeDisk.Hardware;
 namespace WipeDisk
 {
     /// <summary>
-    /// 	Maintains a collection of all physical drives currently detected in the system.
+    /// Maintains a collection of all physical drives currently detected in the system.
     /// </summary>
-    /// <remarks>
-    /// </remarks>
+    /// <remarks></remarks>
     internal class PhysicalDrives : List<PhysicalDrive>
     {
         /// <summary>
-        /// 	Initializes a new instance of the <see cref = "PhysicalDrives" /> class.
+        /// Initializes a new instance of the <see cref="PhysicalDrives"/> class.
         /// </summary>
-        /// <remarks>
-        /// </remarks>
+        /// <remarks></remarks>
         internal PhysicalDrives()
         {
             // Load all physical drive information in to this collection.
@@ -42,10 +40,9 @@ namespace WipeDisk
         }
 
         /// <summary>
-        /// 	Obtains a list of logical drives from physical drives.
+        /// Obtains a list of logical drives from physical drives.
         /// </summary>
-        /// <remarks>
-        /// </remarks>
+        /// <remarks></remarks>
         private void QueryPhysicalDrives()
         {
             var searcher = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_DiskDrive");

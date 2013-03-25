@@ -21,14 +21,40 @@ using System;
 
 namespace WipeDisk.Hardware
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <remarks></remarks>
     public class CubicAddress
     {
+        /// <summary>
+        /// Gets or sets the cylinder.
+        /// </summary>
+        /// <value>The cylinder.</value>
+        /// <remarks></remarks>
         public virtual long Cylinder { get; set; }
 
+        /// <summary>
+        /// Gets or sets the head.
+        /// </summary>
+        /// <value>The head.</value>
+        /// <remarks></remarks>
         public virtual uint Head { get; set; }
 
+        /// <summary>
+        /// Gets or sets the sector.
+        /// </summary>
+        /// <value>The sector.</value>
+        /// <remarks></remarks>
         public virtual uint Sector { get; set; }
 
+        /// <summary>
+        /// Transforms the specified linear address.
+        /// </summary>
+        /// <param name="linearAddress">The linear address.</param>
+        /// <param name="geometry">The geometry.</param>
+        /// <returns></returns>
+        /// <remarks></remarks>
         public static CubicAddress Transform(long linearAddress, CubicAddress geometry)
         {
             var cubicAddress = new CubicAddress();

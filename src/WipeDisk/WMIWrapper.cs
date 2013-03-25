@@ -24,19 +24,17 @@ using System.Management;
 namespace WipeDisk
 {
     /// <summary>
-    /// 	Wraps WMI and provides several methods for querying and returning information from it.
+    /// Wraps WMI and provides several methods for querying and returning information from it.
     /// </summary>
-    /// <remarks>
-    /// </remarks>
+    /// <remarks></remarks>
     internal class WMIWrapper
     {
         /// <summary>
-        /// 	Returns all logical drives for a physical drive.
+        /// Returns all logical drives for a physical drive.
         /// </summary>
-        /// <param name = "deviceId">The device id.</param>
+        /// <param name="deviceId">The device id.</param>
         /// <returns>String list of drive letters.</returns>
-        /// <remarks>
-        /// </remarks>
+        /// <remarks></remarks>
         public static List<string> GetDevices(string deviceId)
         {
             var driveLetters = new List<string>();
@@ -60,11 +58,10 @@ namespace WipeDisk
         }
 
         /// <summary>
-        /// 	Returns the name of the physical drive that was used to boot the system.
+        /// Returns the name of the physical drive that was used to boot the system.
         /// </summary>
         /// <returns></returns>
-        /// <remarks>
-        /// </remarks>
+        /// <remarks></remarks>
         public static string GetSystemDrive()
         {
             // Get the logical drive letter using environment variables. 
@@ -94,6 +91,35 @@ namespace WipeDisk
             }
             // Our attempts have failed - return a NULL as an indication to our failure.
             return null;
+        }
+
+        /// <summary>
+        /// Formats the specified drive
+        /// </summary>
+        /// <param name="driveLetter">The drive letter to format</param>
+        /// <param name="fileSystem">The file system to format the drive as (Default = NTFS)</param>
+        /// <param name="quickFormat"><c>True</c> to perform a quick format, otherwise <c>False</c></param>
+        /// <param name="clusterSize">The cluster size to use (Default = 8192)</param>
+        /// <param name="label">The label to use on the hard drive. (Default = HDD)</param>
+        /// <param name="enableCompression"><c>True</c> to enable compression on this drive. (Default = false)</param>
+        /// <returns><c>True</c> if the format completes without error, otherwise <c>False</c> is returned.</returns>
+        /// <remarks></remarks>
+        public static bool FormatDrive(string driveLetter,
+                                      string fileSystem = "NTFS", bool quickFormat = true,
+                                      int clusterSize = 8192, string label = "HDD", bool enableCompression = false)
+        {
+            if (driveLetter.Length != 2 || driveLetter[1] != ':' || !char.IsLetter(driveLetter[0]))
+                return false;
+
+            //query and format given drive         
+            var searcher = new ManagementObjectSearcher
+                (@"select * from Win32_Volume WHERE DriveLetter = '" + driveLetter + "'");
+            foreach (ManagementObject vi in searcher.Get())
+            {
+                vi.InvokeMethod("Format", new object[] { fileSystem, quickFormat, clusterSize, label, enableCompression });
+            }
+
+            return true;
         }
     }
 }

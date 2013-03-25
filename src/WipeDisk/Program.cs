@@ -25,17 +25,16 @@ using DriveCleanser.CmdLine;
 namespace WipeDisk
 {
     /// <summary>
+    /// 
     /// </summary>
-    /// <remarks>
-    /// </remarks>
+    /// <remarks></remarks>
     internal class Program
     {
         /// <summary>
-        /// 	Mains the specified args.
+        /// Mains the specified args.
         /// </summary>
-        /// <param name = "args">The args.</param>
-        /// <remarks>
-        /// </remarks>
+        /// <param name="args">The args.</param>
+        /// <remarks></remarks>
         private static void Main(string[] args)
         {
            // byte[] returned = DriveCleanser.Cryptography.RNG.FillDoD5200ByteArray(1024);
@@ -80,6 +79,10 @@ namespace WipeDisk
             }
         }
 
+        /// <summary>
+        /// Shows the banner.
+        /// </summary>
+        /// <remarks></remarks>
         private static void ShowBanner()
         {
             Console.WriteLine("DriveCleanser Copyright 2013 Brian David Patterson");
@@ -87,13 +90,12 @@ namespace WipeDisk
         }
 
         /// <summary>
-        /// 	Validates the key info.
+        /// Validates the key info.
         /// </summary>
-        /// <param name = "keyInfo">The key info.</param>
-        /// <param name = "driveCount">The drive count.</param>
+        /// <param name="keyInfo">The key info.</param>
+        /// <param name="driveCount">The drive count.</param>
         /// <returns></returns>
-        /// <remarks>
-        /// </remarks>
+        /// <remarks></remarks>
         private static bool ValidateKeyInfo(ConsoleKeyInfo keyInfo, int driveCount)
         {
             string selectedItem = keyInfo.KeyChar.ToString();

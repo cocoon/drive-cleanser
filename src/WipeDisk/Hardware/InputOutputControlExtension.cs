@@ -24,26 +24,62 @@ using Microsoft.Win32.SafeHandles;
 
 namespace WipeDisk.Hardware
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <remarks></remarks>
     public static class InputOutputControlExtension
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public const UInt32
             DISK_BASE = 0x00000007,
             METHOD_BUFFERED = 0,
             FILE_ANY_ACCESS = 0;
 
 
+        /// <summary>
+        /// 
+        /// </summary>
         public static readonly UInt32 DISK_GET_DRIVE_GEOMETRY_EX =
             CTL_CODE(DISK_BASE, 0x0028, METHOD_BUFFERED, FILE_ANY_ACCESS);
 
+        /// <summary>
+        /// 
+        /// </summary>
         public static readonly UInt32 DISK_GET_DRIVE_GEOMETRY =
             CTL_CODE(DISK_BASE, 0, METHOD_BUFFERED, FILE_ANY_ACCESS);
 
 
+        /// <summary>
+        /// CTs the l_ CODE.
+        /// </summary>
+        /// <param name="DeviceType">Type of the device.</param>
+        /// <param name="Function">The function.</param>
+        /// <param name="Method">The method.</param>
+        /// <param name="Access">The access.</param>
+        /// <returns></returns>
+        /// <remarks></remarks>
         private static UInt32 CTL_CODE(UInt32 DeviceType, UInt32 Function, UInt32 Method, UInt32 Access)
         {
             return (((DeviceType) << 16) | ((Access) << 14) | ((Function) << 2) | (Method));
         }
 
+        /// <summary>
+        /// Executes the specified x.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="x">The x.</param>
+        /// <param name="dwIoControlCode">The dw io control code.</param>
+        /// <param name="lpFileName">Name of the lp file.</param>
+        /// <param name="dwDesiredAccess">The dw desired access.</param>
+        /// <param name="dwShareMode">The dw share mode.</param>
+        /// <param name="lpSecurityAttributes">The lp security attributes.</param>
+        /// <param name="dwCreationDisposition">The dw creation disposition.</param>
+        /// <param name="dwFlagsAndAttributes">The dw flags and attributes.</param>
+        /// <param name="hTemplateFile">The h template file.</param>
+        /// <remarks></remarks>
         public static void Execute<T>(
             ref T x,
             UInt32 dwIoControlCode,

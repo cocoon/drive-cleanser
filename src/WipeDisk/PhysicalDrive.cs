@@ -23,65 +23,58 @@ using WipeDisk.Hardware;
 namespace WipeDisk
 {
     /// <summary>
+    /// 
     /// </summary>
-    /// <remarks>
-    /// </remarks>
+    /// <remarks></remarks>
     internal class PhysicalDrive
     {
         /// <summary>
-        /// 	Gets or sets the device ID.
+        /// Gets or sets the device ID.
         /// </summary>
         /// <value>The device ID.</value>
-        /// <remarks>
-        /// </remarks>
+        /// <remarks></remarks>
         public string DeviceID { get; set; }
 
         /// <summary>
-        /// 	Gets or sets the size of the device.
+        /// Gets or sets the size of the device.
         /// </summary>
         /// <value>The size of the device.</value>
-        /// <remarks>
-        /// </remarks>
+        /// <remarks></remarks>
         public string DeviceSize { get; set; }
 
         /// <summary>
-        /// 	Gets or sets the name of the device.
+        /// Gets or sets the name of the device.
         /// </summary>
         /// <value>The name of the device.</value>
-        /// <remarks>
-        /// </remarks>
+        /// <remarks></remarks>
         public string DeviceName { get; set; }
 
         /// <summary>
-        /// 	Gets or sets the logical drives.
+        /// Gets or sets the logical drives.
         /// </summary>
         /// <value>The logical drives.</value>
-        /// <remarks>
-        /// </remarks>
+        /// <remarks></remarks>
         public string LogicalDrives { get; set; }
 
         /// <summary>
-        /// 	Gets or sets the geometry.
+        /// Gets or sets the geometry.
         /// </summary>
         /// <value>The geometry.</value>
-        /// <remarks>
-        /// </remarks>
+        /// <remarks></remarks>
         public DiskGeometry Geometry { get; set; }
 
         /// <summary>
-        /// 	Gets or sets the cubic address detail.
+        /// Gets or sets the cubic address detail.
         /// </summary>
         /// <value>The cubic address detail.</value>
-        /// <remarks>
-        /// </remarks>
+        /// <remarks></remarks>
         public CubicAddress CubicAddressDetail { get; set; }
 
         /// <summary>
-        /// 	Returns a <see cref = "System.String" /> that represents this instance.
+        /// Returns a <see cref="System.String"/> that represents this instance.
         /// </summary>
-        /// <returns>A <see cref = "System.String" /> that represents this instance.</returns>
-        /// <remarks>
-        /// </remarks>
+        /// <returns>A <see cref="System.String"/> that represents this instance.</returns>
+        /// <remarks></remarks>
         public override string ToString()
         {
             var sb = new StringBuilder();
