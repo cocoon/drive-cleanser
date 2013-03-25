@@ -21,3 +21,4 @@ This page contains performance information for wiping various drive devices. The
 || Sandisk Cruzer USB|| USB || 8GB || 19.6705 ||
 || Hitachi HTS541680J9SA00 SATA|| eSATA || 80GB || 36.6832 ||
 || Western Digital WD600BEVS SATA|| eSATA || 60GB || 30.7065 ||
+|| Seagate Momentus 5400.4 SATA|| eSATA || 250GB || 83.2218 ||
